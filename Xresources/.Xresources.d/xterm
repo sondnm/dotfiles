@@ -1,0 +1,5 @@
+XTerm*background: S_base03
+XTerm*foreground: S_base0
+XTerm*reverseVideo: on
+XTerm*faceName: Consolas:size=09:antialias=true
+XTerm*selectToClipboard: true
