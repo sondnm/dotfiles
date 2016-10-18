@@ -1,5 +1,5 @@
-#define S_font     xft:Consolas:size=10:antialias=true
-#define S_boldFont xft:Consolas:size=10:bold:antialias=true
+#define S_font     xft:Inconsolata-dz for Powerline:size=09:antialias=true
+#define S_boldFont xft:Inconsolata-dz for Powerline:size=09:bold:antialias=true
 
 ! Solarized colorscheme
 #define S_base03        #002b36
