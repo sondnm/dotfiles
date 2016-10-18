@@ -12,13 +12,12 @@ map  <silent> <C-c>      "*y
 map  <silent> <Leader>v  "*p
 map  <silent> <Leader>n  :vsp<CR>
 map  <silent> <Leader>df :Remove!<CR>
-map  <silent> <Leader>ct :! ctags -R<CR><CR>
+map  <silent> <Leader>ct :! ctags -R --exclude={.git,log,node_modules,"*.min.js","*.min.css"}<CR><CR>
 nmap <CR> ]<Space>
 nmap <S-CR> [<Space>
 map <Leader>aa :normal ggVG<CR>
 map <Leader>ya :%y+<CR>
 map <Leader>da :%d<CR>
-nmap <Leader>ca <Leader>aagc<CR>
 
 " Movements --------------------
 nmap <BS> <C-w>h
@@ -41,7 +40,7 @@ nmap <silent> ff :NERDTreeFind<CR>
 nmap <silent> fw :Ag <C-R><C-W><CR>
 
 " Easymotion
-map / <Plug>(easymotion-sn)
+map  / <Plug>(easymotion-sn)
 map  <Leader>s  <Plug>(easymotion-prefix)
 map  <Leader>cw <Plug>(easymotion-sn)<C-R><C-W><CR>
 nmap <Leader>j  <Plug>(easymotion-j)
@@ -59,7 +58,6 @@ map <Leader>gr  :Gremove<CR>
 map <Leader>gs  :Gstatus<CR>
 
 " Rails
-map <Leader>av  :AV<CR>
 map <Leader>bi  :!bundle install<CR>
 map <Leader>d   :normal obinding.pry<Esc>
 map <Leader>dv  :normal o- binding.pry<Esc>
@@ -70,13 +68,13 @@ map <Leader>bgv :normal o<% debugger %><Esc>
 map <Leader>ra  :Rails<Space>
 map <Leader>re  :Rextract<Space>
 map <Leader>rk  :Rake<Space>
-map <Leader>rm  :Rake db:create db:migrate<CR>
+map <Leader>mg  :Rake db:create db:migrate<CR>
 map <Leader>rf  :R<CR>
 map <Leader>rft :RT<CR>
 map <Leader>rfv :RV<CR>
 map <Leader>af  :A<CR>
-map <Leader>aft :AT<CR>
-map <Leader>afv :AV<CR>
+map <Leader>at :AT<CR>
+map <Leader>av :AV<CR>
 " Edit config/environment.rb or config/application.rb
 map <Leader>ap :Eenvironment<CR>
 " Edit config/database.yml
@@ -97,37 +95,13 @@ map <Leader>ev :Eview<Space>
 map <Leader>ec :Econtroller<Space>
 map <Leader>eh :Ehelper<Space>
 map <Leader>ej :Ejavascript<Space>
-map <Leader>es :Estylesheet<Space>
-map <Leader>en :Eenvironment<Space>
-map <Leader>el :Elib<Space>
-map <Leader>ei :Einitializer<Space>
-map <Leader>ey :Elayout<Space>
-map <Leader>eg :Emigration<Space>
-map <Leader>ed :Eschema<Space>
-map <Leader>et :Etask<Space>
 map <Leader>vm :Vmodel<Space>
 map <Leader>vv :Vview<Space>
 map <Leader>vc :Vcontroller<Space>
 map <Leader>vh :Vhelper<Space>
 map <Leader>vj :Vjavascript<Space>
-map <Leader>vs :Vstylesheet<Space>
-map <Leader>vn :Venvironment<Space>
-map <Leader>vl :Vlib<Space>
-map <Leader>vi :Vinitializer<Space>
-map <Leader>vy :Vlayout<Space>
-map <Leader>vg :Vmigration<Space>
-map <Leader>vd :Vschema<Space>
-map <Leader>vt :Vtask<Space>
 map <Leader>tm :Tmodel<Space>
 map <Leader>tv :Tview<Space>
 map <Leader>tc :Tcontroller<Space>
 map <Leader>th :Thelper<Space>
 map <Leader>tj :Tjavascript<Space>
-map <Leader>ts :Tstylesheet<Space>
-map <Leader>tn :Tenvironment<Space>
-map <Leader>tl :Tlib<Space>
-map <Leader>ti :Tinitializer<Space>
-map <Leader>ty :Tlayout<Space>
-map <Leader>tg :Tmigration<Space>
-map <Leader>td :Tschema<Space>
-map <Leader>tt :Ttask<Space>

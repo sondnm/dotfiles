@@ -14,6 +14,17 @@ let g:indentLine_char = '¦'
 " Vim airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#tab_nr_type = 2
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <A-1> <Plug>AirlineSelectTab1
+nmap <A-2> <Plug>AirlineSelectTab2
+nmap <A-3> <Plug>AirlineSelectTab3
+nmap <A-4> <Plug>AirlineSelectTab4
+nmap <A-5> <Plug>AirlineSelectTab5
+nmap <A-6> <Plug>AirlineSelectTab6
+nmap <A-7> <Plug>AirlineSelectTab7
+nmap <A-8> <Plug>AirlineSelectTab8
+nmap <A-9> <Plug>AirlineSelectTab9
 
 " Airline symbols
 if !exists('g:airline_symbols')
