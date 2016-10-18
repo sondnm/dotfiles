@@ -1,5 +1,6 @@
 ! GENERAL ------------------------------
 URxvt*termName:             rxvt-unicode-256color
+URxvt*utf8:                 true
 URxvt*loginShell:           true
 URxvt*scrollTtyKeypress:    true
 URxvt*scrollTtyOutput:      false
@@ -13,10 +14,15 @@ URxvt*lineSpace:            0
 URxvt*letterSpace:          0
 ! set borderLess to false in i3 to avoid irresponsive terminal
 URxvt*borderLess:           false
+! disable iso14755 (Ctrl + Shift)
+URxvt*iso14755:             false
+URxvt*iso14755_52:          false
+URxvt*unicode3:             true
 
 ! FONTS ------------------------------
 URxvt*font:                 S_font
 URxvt*boldFont:             S_boldFont
+URxvt*italicFont:           S_italicFont
 URxvt*depth:                32
 URxvt*saveLines:            5000
 URxvt*fading:               30
@@ -27,9 +33,6 @@ URxvt*cursorColor:          S_base00
 URxvt*cursorUnderline:      false
 
 ! other possible settings:
-! Rxvt.perl-ext-common: ...,clipboard
-! URxvt.keysym.M-C-c:   perl:clipboard:copy
-! URxvt.keysym.M-v:   perl:clipboard:paste
 ! URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 ! URxvt*chdir:                          string
 ! URxvt*reverseVideo:                   boolean

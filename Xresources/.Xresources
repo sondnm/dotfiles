@@ -1,6 +1,5 @@
 #include ".Xresources.d/definitions"
 #include ".Xresources.d/colors"
-#include ".Xresources.d/general"
 #include ".Xresources.d/cursor"
 #include ".Xresources.d/xft"
 #include ".Xresources.d/urxvt"

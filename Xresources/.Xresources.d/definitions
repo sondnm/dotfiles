@@ -1,5 +1,9 @@
-#define S_font     xft:Inconsolata-dz for Powerline:size=09:antialias=true
-#define S_boldFont xft:Inconsolata-dz for Powerline:size=09:bold:antialias=true
+#define S_font       xft:Inconsolata-dz:size=11:antialias=true:hinting=true,\
+                     xft:Inconsolata-dz\ for\ Powerline:size=11:antialias=true:hinting=true
+#define S_boldFont   xft:Inconsolata-dz:size=11:antialias=true:hinting=true:bold,\
+                     xft:Inconsolata-dz\ for\ Powerline:size=11:antialias=true:hinting=true:bold
+#define S_italicFont xft:Inconsolata-dz:size=11:antialias=true:hinting=true:italic,\
+                     xft:Inconsolata-dz\ for\ Powerline:size=11:antialias=true:hinting=true:italic
 
 ! Solarized colorscheme
 #define S_base03        #002b36
@@ -10,7 +14,6 @@
 #define S_base1         #93a1a1
 #define S_base2         #eee8d5
 #define S_base3         #fdf6e3
-
 #define S_yellow        #b58900
 #define S_orange        #cb4b16
 #define S_red           #dc322f
