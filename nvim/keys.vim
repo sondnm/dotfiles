@@ -29,6 +29,17 @@ vmap <C-j> <Plug>MoveBlockDown
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+" Airline
+nmap <A-1> <Plug>AirlineSelectTab1
+nmap <A-2> <Plug>AirlineSelectTab2
+nmap <A-3> <Plug>AirlineSelectTab3
+nmap <A-4> <Plug>AirlineSelectTab4
+nmap <A-5> <Plug>AirlineSelectTab5
+nmap <A-6> <Plug>AirlineSelectTab6
+nmap <A-7> <Plug>AirlineSelectTab7
+nmap <A-8> <Plug>AirlineSelectTab8
+nmap <A-9> <Plug>AirlineSelectTab9
+
 " Windows and tabs --------------------
 map <Leader>te :tabe<Space>
 
@@ -38,6 +49,10 @@ map <C-p> :Files<CR>
 map <Leader>cm :Commits<CR>
 nmap <silent> ff :NERDTreeFind<CR>
 nmap <silent> fw :Ag <C-R><C-W><CR>
+
+" Autocomplete & snippets
+inoremap <silent><expr> <C-j> "\<C-n>"
+inoremap <silent><expr> <C-k> "\<C-p>"
 
 " Easymotion
 map  / <Plug>(easymotion-sn)
