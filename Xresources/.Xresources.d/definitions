@@ -1,9 +1,9 @@
-#define S_font       xft:Inconsolata-dz:size=11:antialias=true:hinting=true,\
-                     xft:Inconsolata-dz\ for\ Powerline:size=11:antialias=true:hinting=true
-#define S_boldFont   xft:Inconsolata-dz:size=11:antialias=true:hinting=true:bold,\
-                     xft:Inconsolata-dz\ for\ Powerline:size=11:antialias=true:hinting=true:bold
-#define S_italicFont xft:Inconsolata-dz:size=11:antialias=true:hinting=true:italic,\
-                     xft:Inconsolata-dz\ for\ Powerline:size=11:antialias=true:hinting=true:italic
+#define S_font       xft:Inconsolata-dz:size=10:antialias=true:hinting=true,\
+                     xft:Inconsolata-dz\ for\ Powerline:size=10:antialias=true:hinting=true
+#define S_boldFont   xft:Inconsolata-dz:size=10:antialias=true:hinting=true:bold,\
+                     xft:Inconsolata-dz\ for\ Powerline:size=10:antialias=true:hinting=true:bold
+#define S_italicFont xft:Inconsolata-dz:size=10:antialias=true:hinting=true:italic,\
+                     xft:Inconsolata-dz\ for\ Powerline:size=10:antialias=true:hinting=true:italic
 
 ! Solarized colorscheme
 #define S_base03        #002b36
