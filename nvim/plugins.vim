@@ -45,6 +45,9 @@ Plug 'mxw/vim-jsx'
 Plug 'fatih/vim-go'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'slim-template/vim-slim'
+Plug 'c.vim'
+Plug 'st.vim'
+Plug 'neovimhaskell/haskell-vim'
 
 " Add plugins to &runtimepath
 call plug#end()

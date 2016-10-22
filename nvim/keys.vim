@@ -43,6 +43,9 @@ nmap <A-9> <Plug>AirlineSelectTab9
 " Windows and tabs --------------------
 map <Leader>te :tabe<Space>
 
+" Fix indentation --------------------
+map <F7> mzgg=G`z
+
 " Searches ------------------------------
 map <Leader>ag :Ag<Space>
 map <C-p> :Files<CR>
