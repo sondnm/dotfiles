@@ -17,8 +17,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Completion & Snippets
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
- Plug 'SirVer/ultisnips'
- Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Integrations
 Plug 'scrooloose/nerdtree'
@@ -47,7 +47,6 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'slim-template/vim-slim'
 Plug 'c.vim'
 Plug 'st.vim'
-Plug 'neovimhaskell/haskell-vim'
 
 " Add plugins to &runtimepath
 call plug#end()

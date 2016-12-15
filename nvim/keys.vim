@@ -2,7 +2,7 @@
 " General --------------------
 map  <silent> <Leader>nt :NERDTree<CR>
 map  <silent> <Leader>pi :PlugInstall<CR>
-map  <silent> <Leader>pu :PlugInstall!<CR>
+map  <silent> <Leader>pu :PlugUpdate<CR>
 map  <silent> <Leader>pg :PlugUpgrade<CR>
 map  <silent> <Leader>pc :PlugClean!<CR>
 map  <silent> <Leader>rl :source $HOME/.config/nvim/init.vim<CR>
@@ -18,6 +18,7 @@ nmap <S-CR> [<Space>
 map <Leader>aa :normal ggVG<CR>
 map <Leader>ya :%y+<CR>
 map <Leader>da :%d<CR>
+map <Leader>f :StripWhitespace<CR>
 
 " Movements --------------------
 nmap <BS> <C-w>h
@@ -77,7 +78,7 @@ map <Leader>gs  :Gstatus<CR>
 
 " Rails
 map <Leader>bi  :!bundle install<CR>
-map <Leader>d   :normal obinding.pry<Esc>
+map <Leader>d   :normal orequire 'pry'; binding.pry<Esc>
 map <Leader>dv  :normal o- binding.pry<Esc>
 map <Leader>bg  :normal odebugger<Esc>
 map <Leader>bgv :normal o<% debugger %><Esc>
@@ -113,13 +114,16 @@ map <Leader>ev :Eview<Space>
 map <Leader>ec :Econtroller<Space>
 map <Leader>eh :Ehelper<Space>
 map <Leader>ej :Ejavascript<Space>
+map <Leader>el :Elib<Space>
 map <Leader>vm :Vmodel<Space>
 map <Leader>vv :Vview<Space>
 map <Leader>vc :Vcontroller<Space>
 map <Leader>vh :Vhelper<Space>
 map <Leader>vj :Vjavascript<Space>
+map <Leader>vl :Vlib<Space>
 map <Leader>tm :Tmodel<Space>
 map <Leader>tv :Tview<Space>
 map <Leader>tc :Tcontroller<Space>
 map <Leader>th :Thelper<Space>
 map <Leader>tj :Tjavascript<Space>
+map <Leader>tl :Tlib<Space>
