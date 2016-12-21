@@ -3,8 +3,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Interface
 Plug 'iCyMind/NeoSolarized'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Yggdroot/indentLine'
 
@@ -44,6 +45,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'fatih/vim-go'
 Plug 'neovimhaskell/haskell-vim'
+" Plug 'eagletmt/neco-ghc'
 Plug 'slim-template/vim-slim'
 Plug 'c.vim'
 Plug 'st.vim'
