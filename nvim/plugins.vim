@@ -27,7 +27,7 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
-Plug 'rking/ag.vim'
+" Plug 'rking/ag.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
