@@ -12,7 +12,7 @@ map  <silent> <C-c>      "*y
 map  <silent> <Leader>v  "*p
 map  <silent> <Leader>n  :vsp<CR>
 map  <silent> <Leader>df :Remove!<CR>
-map  <silent> <Leader>ct :! ctags -R --exclude={.git,log,node_modules,"*.min.js","*.min.css"}<CR><CR>
+map  <silent> <Leader>ct :! ctags -R --exclude={.git,log,tmp,node_modules,"*.min.js","*.min.css"}<CR><CR>
 nmap <CR> ]<Space>
 nmap <S-CR> [<Space>
 map <Leader>aa :normal ggVG<CR>
@@ -75,6 +75,8 @@ map <Leader>gd  :Gvdiff<CR>
 map <Leader>gm  :Gmove<Space>
 map <Leader>gr  :Gremove<CR>
 map <Leader>gs  :Gstatus<CR>
+map <Leader>gv  :Gitv<Space>
+map <Leader>gk  :silent !gitk %&<CR>
 
 " Rails
 map <Leader>bi  :!bundle install<CR>
@@ -98,8 +100,10 @@ map <Leader>av :AV<CR>
 map <Leader>ap :Eenvironment<CR>
 " Edit config/database.yml
 map <Leader>db :e ./config/database.yml<CR>
-" Edit db/schema.rb
+" Edit db/routes.rb
 map <Leader>rt :Vinitializer<CR>
+" Edit db/schema.rb
+map <Leader>sc :Vschema<CR>
 " Edit Gemfile
 map <Leader>g  :Vlib<CR>
 " Edit current layout or application layout

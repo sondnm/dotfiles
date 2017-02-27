@@ -33,6 +33,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/gist-vim'
 Plug 'majutsushi/tagbar'
+Plug 'gregsexton/gitv'
 
 " Commands
 Plug 'tpope/vim-surround'

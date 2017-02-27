@@ -37,7 +37,7 @@ let g:lightline = { 'colorscheme': 'powerline' }
 " let g:airline_solarized_dark_inactive_border = 1
 
 " Better white space
-autocmd BufWritePre * StripWhitespace
+" autocmd BufWritePre * StripWhitespace
 
 " Slim syntax highlights
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
