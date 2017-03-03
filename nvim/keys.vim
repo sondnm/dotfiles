@@ -65,6 +65,9 @@ map  <Leader>cw <Plug>(easymotion-sn)<C-R><C-W><CR>
 nmap <Leader>j  <Plug>(easymotion-j)
 nmap <Leader>k  <Plug>(easymotion-k)
 
+" Tagbar
+nmap <silent> <F8> :TagbarToggle<CR>
+
 " Git
 map <Leader>co  :Gread<CR>
 map <Leader>ga  :Gwrite<CR>
