@@ -19,6 +19,7 @@ map <Leader>aa :normal ggVG<CR>
 map <Leader>ya :%y+<CR>
 map <Leader>da :%d<CR>
 map <Leader>f :StripWhitespace<CR>
+map <Leader>bf :Buffers<CR>
 
 " Movements --------------------
 nmap <BS> <C-w>h
@@ -85,6 +86,8 @@ map <Leader>gk  :silent !gitk %&<CR>
 map <Leader>bi  :!bundle install<CR>
 map <Leader>d   :normal orequire 'pry'; binding.pry<Esc>
 map <Leader>dv  :normal o- binding.pry<Esc>
+map <Leader>bb  :normal obyebug<Esc>
+map <Leader>bbv  :normal o- byebug<Esc>
 map <Leader>bg  :normal odebugger<Esc>
 map <Leader>bgv :normal o<% debugger %><Esc>
 
@@ -120,17 +123,30 @@ map <Leader>em :Emodel<Space>
 map <Leader>ev :Eview<Space>
 map <Leader>ec :Econtroller<Space>
 map <Leader>eh :Ehelper<Space>
+map <Leader>ef :Eform<Space>
+map <Leader>eq :Equery<Space>
 map <Leader>ej :Ejavascript<Space>
 map <Leader>el :Elib<Space>
 map <Leader>vm :Vmodel<Space>
 map <Leader>vv :Vview<Space>
 map <Leader>vc :Vcontroller<Space>
 map <Leader>vh :Vhelper<Space>
+map <Leader>vf :Vform<Space>
+map <Leader>vq :Vquery<Space>
 map <Leader>vj :Vjavascript<Space>
 map <Leader>vl :Vlib<Space>
 map <Leader>tm :Tmodel<Space>
 map <Leader>tv :Tview<Space>
 map <Leader>tc :Tcontroller<Space>
 map <Leader>th :Thelper<Space>
+map <Leader>tf :Tform<Space>
+map <Leader>tq :Tquery<Space>
 map <Leader>tj :Tjavascript<Space>
 map <Leader>tl :Tlib<Space>
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+

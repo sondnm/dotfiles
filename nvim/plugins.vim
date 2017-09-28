@@ -48,8 +48,10 @@ Plug 'fatih/vim-go'
 Plug 'neovimhaskell/haskell-vim'
 " Plug 'eagletmt/neco-ghc'
 Plug 'slim-template/vim-slim'
-Plug 'c.vim'
-Plug 'st.vim'
+Plug 'AndrewRadev/switch.vim'
+" Plug 'c.vim'
+" Plug 'st.vim'
+Plug 'thoughtbot/vim-rspec'
 
 " Add plugins to &runtimepath
 call plug#end()

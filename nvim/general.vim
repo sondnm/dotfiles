@@ -16,6 +16,7 @@ set cursorcolumn              " Highlight current column
 set wildmenu                   " Visual autocomplete for command menu
 set lazyredraw                 " Redraw only when we need to
 set showmatch                  " Highlight matching [{()}]
+set clipboard=unnamed
 
 " Turn Off Swap Files ------------------------------
 
