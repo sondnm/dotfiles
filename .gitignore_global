@@ -11,3 +11,6 @@ tags
 tmp/**/*
 !tmp/cache/.keep
 *.pyc
+config/projections.json
+custom_plan.rb
+zeus.json

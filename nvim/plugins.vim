@@ -51,7 +51,7 @@ Plug 'slim-template/vim-slim'
 Plug 'AndrewRadev/switch.vim'
 " Plug 'c.vim'
 " Plug 'st.vim'
-Plug 'thoughtbot/vim-rspec'
+" Plug 'thoughtbot/vim-rspec'
 
 " Add plugins to &runtimepath
 call plug#end()
