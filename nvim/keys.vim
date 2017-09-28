@@ -145,8 +145,6 @@ map <Leader>tj :Tjavascript<Space>
 map <Leader>tl :Tlib<Space>
 
 " RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>zrs:! zeus rspec %:<C-r>=line('.')<CR><CR>
+map <Leader>rs:! rspec %:<C-r>=line('.')<CR><CR>
 
