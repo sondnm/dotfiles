@@ -20,6 +20,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'epilande/vim-es2015-snippets'
 
 " Integrations
 Plug 'scrooloose/nerdtree'
@@ -33,7 +34,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/gist-vim'
 Plug 'majutsushi/tagbar'
-Plug 'gregsexton/gitv'
+Plug 'junegunn/gv.vim'
 
 " Commands
 Plug 'tpope/vim-surround'
@@ -52,6 +53,9 @@ Plug 'AndrewRadev/switch.vim'
 " Plug 'c.vim'
 " Plug 'st.vim'
 " Plug 'thoughtbot/vim-rspec'
+Plug 'chemzqm/vim-jsx-improve'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'rust-lang/rust.vim'
 
 " Add plugins to &runtimepath
 call plug#end()

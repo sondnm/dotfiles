@@ -12,7 +12,7 @@ map  <silent> <C-c>      "*y
 map  <silent> <Leader>v  "*p
 map  <silent> <Leader>n  :vsp<CR>
 map  <silent> <Leader>df :Remove!<CR>
-map  <silent> <Leader>ct :! ctags -R --exclude={.git,log,tmp,node_modules,"*.min.js","*.min.css"}<CR><CR>
+map  <silent> <Leader>ct :! ctags -R --exclude={.git,log,tmp,node_modules,"vendor","app/assets","*.min.js","*.min.css"}<CR><CR>
 nmap <CR> ]<Space>
 nmap <S-CR> [<Space>
 map <Leader>aa :normal ggVG<CR>
@@ -20,6 +20,7 @@ map <Leader>ya :%y+<CR>
 map <Leader>da :%d<CR>
 map <Leader>f :StripWhitespace<CR>
 map <Leader>bf :Buffers<CR>
+imap jk <Esc>
 
 " Movements --------------------
 nmap <BS> <C-w>h
@@ -79,8 +80,8 @@ map <Leader>gd  :Gvdiff<CR>
 map <Leader>gm  :Gmove<Space>
 map <Leader>gr  :Gremove<CR>
 map <Leader>gs  :Gstatus<CR>
-map <Leader>gv  :Gitv<Space>
-map <Leader>gk  :silent !gitk %&<CR>
+map <Leader>gv  :GV!<CR>
+map <Leader>gk  :GV<CR>
 
 " Rails
 map <Leader>bi  :!bundle install<CR>
@@ -145,6 +146,6 @@ map <Leader>tj :Tjavascript<Space>
 map <Leader>tl :Tlib<Space>
 
 " RSpec.vim mappings
-map <Leader>zrs:! zeus rspec %:<C-r>=line('.')<CR><CR>
-map <Leader>rs:! rspec %:<C-r>=line('.')<CR><CR>
+map <Leader>zrs :! zeus rspec %:<C-r>=line('.')<CR><CR>
+map <Leader>rs :! bundle exec rspec %:<C-r>=line('.')<CR><CR>
 

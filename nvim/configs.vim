@@ -15,29 +15,13 @@ let g:indentLine_char = '¦'
 " Lightline
 let g:lightline = { 'colorscheme': 'powerline' }
 
-" Vim airline
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#show_buffers = 0
-" let g:airline#extensions#tabline#tab_nr_type = 2
-" let g:airline#extensions#tabline#buffer_idx_mode = 1
-
-" Airline symbols
-" if $TERM == 'rxvt-unicode-256color'
-"   let g:airline_powerline_fonts = 0
-" else
-"   let g:airline_powerline_fonts = 1
-"   if !exists('g:airline_symbols')
-"     let g:airline_symbols = {}
-"   endif
-" endif
-
-" Vim airline themes
-" let g:airline_theme = 'solarized'
-" let g:airline_solarized_normal_green = 1
-" let g:airline_solarized_dark_inactive_border = 1
+" JSX
+let g:jsx_ext_required = 0
+let g:xml_syntax_folding = 1
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Better white space
-" autocmd BufWritePre * StripWhitespace
+autocmd BufWritePre * StripWhitespace
 
 " Slim syntax highlights
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
