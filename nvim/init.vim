@@ -1,3 +1,4 @@
+language en_US
 " Leader <space>
 let mapleader=" "
 

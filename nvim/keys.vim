@@ -21,6 +21,9 @@ map <Leader>da :%d<CR>
 map <Leader>f :StripWhitespace<CR>
 map <Leader>bf :Buffers<CR>
 imap jk <Esc>
+nmap cp <Esc>
+noremap <silent> cp :let @+=expand("%:p")<CR>
+nmap <Leader>bd :bufdo bd<CR>
 
 " Movements --------------------
 nmap <BS> <C-w>h
