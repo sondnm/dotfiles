@@ -18,12 +18,13 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Completion & Snippets
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'epilande/vim-es2015-snippets'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 
 " Integrations
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-vinegar'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'

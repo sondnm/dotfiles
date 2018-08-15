@@ -1,0 +1,74 @@
+snippet d5
+abbr "doctype html"
+options head
+  doctype html
+  ${0}
+
+snippet html
+abbr "html ... head ... body"
+  doctype html
+  html
+    head
+      meta charset="utf-8"
+      meta http-equiv="X-UA-Compatible" content="IE=edge"
+      meta name="viewport" content="width=device-width, initial-scale=1"
+    body
+
+
+snippet t
+abbr "table ... thead ... tbody"
+  table
+    thead
+      tr
+        th
+          ${1:headers}
+    tbody
+      tr
+        td
+          ${0:cell}
+
+snippet ul
+abbr "ul ... li ... li"
+    ul
+      li
+        ${0:item}
+      li
+
+snippet y
+abbr "yield"
+  == yield
+
+snippet ife
+abbr "if ... else"
+  - if ${1:condition}
+    ${2:${VISUAL}}
+  - else
+    ${0}
+
+
+snippet a
+abbr "a ... href"
+  a href="${1:#}" ${0:$1}
+snippet aj
+abbr "a ... javascript"
+  a href="javascript:;" ${0}
+
+
+snippet tr
+abbr "tr ..."
+  tr
+    ${0}
+
+
+snippet tr+
+abbr "tr ... td"
+  tr
+    td ${1}
+    td+${0}
+
+
+snippet td+
+abbr "td ... td"
+  td ${1}
+  td+ ${0}
+

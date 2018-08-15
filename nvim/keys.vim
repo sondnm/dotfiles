@@ -1,6 +1,6 @@
 " This file includes all custom keybinding
 " General --------------------
-map  <silent> <Leader>nt :NERDTree<CR>
+map  <silent> <Leader>nt :Ntree<CR>
 map  <silent> <Leader>pi :PlugInstall<CR>
 map  <silent> <Leader>pu :PlugUpdate<CR>
 map  <silent> <Leader>pg :PlugUpgrade<CR>
@@ -12,6 +12,7 @@ map  <silent> <C-c>      "*y
 map  <silent> <Leader>v  "*p
 map  <silent> <Leader>n  :vsp<CR>
 map  <silent> <Leader>df :Remove!<CR>
+map  <Leader>mv :Move<Space>
 map  <silent> <Leader>ct :! ctags -R --exclude={.git,log,tmp,node_modules,"vendor","app/assets","*.min.js","*.min.css"}<CR><CR>
 nmap <CR> ]<Space>
 nmap <S-CR> [<Space>
@@ -56,7 +57,7 @@ map <F7> mzgg=G`z
 map <Leader>ag :Ag<Space>
 map <C-p> :Files<CR>
 map <Leader>cm :Commits<CR>
-nmap <silent> ff :NERDTreeFind<CR>
+" nmap <silent> ff :NERDTreeFind<CR>
 nmap <silent> fw :Ag <C-R><C-W><CR>
 
 " Autocomplete & snippets
@@ -88,6 +89,7 @@ map <Leader>gk  :GV<CR>
 
 " Rails
 map <Leader>bi  :!bundle install<CR>
+map <Leader>br   :normal obinding.irb<Esc>
 map <Leader>d   :normal orequire 'pry'; binding.pry<Esc>
 map <Leader>dv  :normal o- binding.pry<Esc>
 map <Leader>bb  :normal obyebug<Esc>

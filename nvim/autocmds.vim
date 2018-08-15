@@ -9,3 +9,7 @@ augroup Binary
   au BufWritePost *.bin if &bin | %!xxd
   au BufWritePost *.bin set nomod | endif
 augroup END
+
+augroup templates
+  au BufNewFile *.rb so ~/.config/nvim/templates/rb.txt
+augroup END

@@ -1,0 +1,13 @@
+snippet #f
+abbr "# frozen_string_literal: true"
+options head
+  # frozen_string_literal: true
+  ${0}
+
+snippet ife
+abbr if ... else ... end
+  if ${2:#:condition}
+    ${1:TARGET}
+  else
+    ${0:TARGET}
+  end
