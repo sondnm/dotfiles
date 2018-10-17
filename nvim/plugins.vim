@@ -57,6 +57,7 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'chemzqm/vim-jsx-improve'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'rust-lang/rust.vim'
+Plug 'JuliaEditorSupport/julia-vim'
 
 " Add plugins to &runtimepath
 call plug#end()

@@ -6,8 +6,14 @@ options head
 
 snippet ife
 abbr if ... else ... end
-  if ${2:#:condition}
-    ${1:TARGET}
+  if ${1:#:condition}
+    ${2:TARGET}
   else
     ${0:TARGET}
+  end
+
+snippet defi
+abbr "def initialize"
+  def initialize(${1:#:args})
+    @${0} = ${0}
   end
