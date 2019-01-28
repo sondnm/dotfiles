@@ -36,6 +36,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mattn/gist-vim'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/gv.vim'
+Plug 'neomake/neomake'
 
 " Commands
 Plug 'tpope/vim-surround'
