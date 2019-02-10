@@ -21,6 +21,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'honza/vim-snippets'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'Vimjas/vim-python-pep8-indent'
 
 " Integrations
 " Plug 'scrooloose/nerdtree'
