@@ -3,4 +3,3 @@ alias ber "bundle exec rails"
 alias mux tmuxinator
 alias lixi "tmuxinator lixi"
 alias bi "bundle install"
-alias heal "tmuxinator healthify"
