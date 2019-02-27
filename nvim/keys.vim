@@ -85,6 +85,7 @@ map <Leader>gr  :Gremove<CR>
 map <Leader>gs  :Gstatus<CR>
 map <Leader>gv  :GV!<CR>
 map <Leader>gk  :GV<CR>
+vmap <Leader>dp  :diffput<CR>
 
 " Rails
 map <Leader>bi  :!bundle install<CR>
