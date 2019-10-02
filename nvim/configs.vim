@@ -50,3 +50,4 @@ if has('conceal')
 endif
 
 let g:neosnippet#snippets_directory = ['~/.config/nvim/snippets', '~/.config/nvim/plugged/vim-snippets/snippets']
+

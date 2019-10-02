@@ -30,6 +30,7 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-repeat'
 " Plug 'rking/ag.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -38,6 +39,7 @@ Plug 'mattn/gist-vim'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/gv.vim'
 Plug 'neomake/neomake'
+Plug 'godlygeek/tabular'
 
 " Commands
 Plug 'tpope/vim-surround'
@@ -60,6 +62,12 @@ Plug 'chemzqm/vim-jsx-improve'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'rust-lang/rust.vim'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'posva/vim-vue'
+Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
+Plug 'pearofducks/ansible-vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 " Add plugins to &runtimepath
 call plug#end()

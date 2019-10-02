@@ -30,6 +30,10 @@ nmap <BS> <C-w>h
 nmap <Leader><Leader> <C-^>
 vmap <C-k> <Plug>MoveBlockUp
 vmap <C-j> <Plug>MoveBlockDown
+" ZoomFullPanel
+nmap Z <C-w>\|
+" UnZoom
+nmap zz <C-w>=
 
 " EasyAlign
 xmap ga <Plug>(EasyAlign)
@@ -91,9 +95,9 @@ vmap <Leader>dp  :diffput<CR>
 map <Leader>bi  :!bundle install<CR>
 map <Leader>br   :normal obinding.irb<Esc>
 map <Leader>d   :normal orequire 'pry'; binding.pry<Esc>
-map <Leader>dv  :normal o- binding.pry<Esc>
-map <Leader>bb  :normal obyebug<Esc>
-map <Leader>bbv  :normal o- byebug<Esc>
+map <Leader>dv  :normal o- require 'pry'; binding.pry<Esc>
+map <Leader>bb  :normal orequire 'byebug'; byebug<Esc>
+map <Leader>bbv  :normal o- require 'byebug'; byebug<Esc>
 map <Leader>bg  :normal odebugger<Esc>
 map <Leader>bgv :normal o<% debugger %><Esc>
 
