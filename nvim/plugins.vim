@@ -4,10 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Interface
 Plug 'iCyMind/NeoSolarized'
 Plug 'itchyny/lightline.vim'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'Yggdroot/indentLine'
+Plug 'yggdroot/indentline'
 
 " Movements
 Plug 'junegunn/vim-easy-align'
@@ -21,25 +18,24 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'honza/vim-snippets'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'Vimjas/vim-python-pep8-indent'
 
 " Integrations
-" Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-vinegar'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
-" Plug 'rking/ag.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'mattn/gist-vim'
+" Plug 'mattn/gist-vim'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/gv.vim'
 Plug 'neomake/neomake'
-Plug 'godlygeek/tabular'
+Plug 'tpope/vim-sensible'
+Plug 'rhysd/git-messenger.vim'
 
 " Commands
 Plug 'tpope/vim-surround'
@@ -51,23 +47,28 @@ Plug 'tpope/vim-rails'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'fatih/vim-go'
-Plug 'neovimhaskell/haskell-vim'
+" Plug 'neovimhaskell/haskell-vim'
 " Plug 'eagletmt/neco-ghc'
-Plug 'slim-template/vim-slim'
-Plug 'AndrewRadev/switch.vim'
+" Plug 'slim-template/vim-slim'
+" Plug 'AndrewRadev/switch.vim'
 " Plug 'c.vim'
 " Plug 'st.vim'
-" Plug 'thoughtbot/vim-rspec'
-Plug 'chemzqm/vim-jsx-improve'
-Plug 'maxmellon/vim-jsx-pretty'
+Plug 'thoughtbot/vim-rspec'
+" Plug 'chemzqm/vim-jsx-improve'
+" Plug 'maxmellon/vim-jsx-pretty'
 Plug 'rust-lang/rust.vim'
-Plug 'JuliaEditorSupport/julia-vim'
-Plug 'posva/vim-vue'
+" Plug 'JuliaEditorSupport/julia-vim'
+" Plug 'posva/vim-vue'
 Plug 'hashivim/vim-terraform'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'pearofducks/ansible-vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'peitalin/vim-jsx-typescript'
+Plug 'ekalinin/Dockerfile.vim'
+
+" Asynchronous
+Plug 'skywind3000/asyncrun.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
+

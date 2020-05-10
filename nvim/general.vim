@@ -11,12 +11,14 @@ set visualbell                 " No sounds
 set autoread                   " Reload files changed outside vim
 set laststatus=2               " Always display the status line
 set autowrite                  " Automatically :write before running commands
-set cursorline                " Highlight current line
-set cursorcolumn              " Highlight current column
+set cursorline                 " Highlight current line
+set cursorcolumn               " Highlight current column
 set wildmenu                   " Visual autocomplete for command menu
 set lazyredraw                 " Redraw only when we need to
 set showmatch                  " Highlight matching [{()}]
 set clipboard=unnamed
+set scrolloff=5
+set nocompatible
 
 " Turn Off Swap Files ------------------------------
 
@@ -35,15 +37,21 @@ set tabstop=2
 set expandtab
 set shiftround
 
+" Enable filetype indentation ---------------------
+filetype plugin indent on
+
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
 
-" Auto indent pasted text
-nnoremap p p=`]<C-o>
-nnoremap P P=`]<C-o>
+" Remove preview
+set completeopt-=preview
+
+" Auto indent pasted text (working incorrectly with new neovim)
+" nnoremap p p=`]<C-o>
+" nnoremap P P=`]<C-o>
 
 " Search -------------------------------------------
 set incsearch                " Find the next match as we type the search
@@ -56,3 +64,4 @@ set hidden
 
 " Enable syntax highlighting
 syntax enable
+

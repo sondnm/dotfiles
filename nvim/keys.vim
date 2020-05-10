@@ -13,15 +13,16 @@ map  <silent> <Leader>v  "*p
 map  <silent> <Leader>n  :vsp<CR>
 map  <silent> <Leader>df :Remove!<CR>
 map  <Leader>mv :Move<Space>
-map  <silent> <Leader>ct :! ctags -R --exclude={.git,log,tmp,node_modules,"vendor","app/assets","*.min.js","*.min.css"}<CR><CR>
+map  <silent> <Leader>ct :AsyncRun -silent
+      \ ctags -R --exclude={.git,log,tmp,node_modules,"vendor","*.min.js","*.min.css"}<CR>
 nmap <CR> ]<Space>
 nmap <S-CR> [<Space>
 map <Leader>aa :normal ggVG<CR>
 map <Leader>ya :%y+<CR>
 map <Leader>da :%d<CR>
-map <Leader>f :StripWhitespace<CR>
-map <Leader>bf :Buffers<CR>
+map <Leader>f :ALEFix<CR>
 nmap cp <Esc>
+map <Leader>bf :Buffers<CR>
 noremap <silent> cp :let @+=expand("%:p")<CR>
 nmap <Leader>bd :bufdo bd<CR>
 
@@ -60,7 +61,7 @@ map <F7> mzgg=G`z
 map <Leader>ag :Ag<Space>
 map <C-p> :Files<CR>
 map <Leader>cm :Commits<CR>
-" nmap <silent> ff :NERDTreeFind<CR>
+map <Leader>cb :BCommits<CR>
 nmap <silent> fw :Ag <C-R><C-W><CR>
 
 " Autocomplete & snippets
@@ -68,14 +69,19 @@ inoremap <silent><expr> <C-j> "\<C-n>"
 inoremap <silent><expr> <C-k> "\<C-p>"
 
 " Easymotion
+map  ;  <Plug>(easymotion-prefix)
 map  / <Plug>(easymotion-sn)
-map  <Leader>s  <Plug>(easymotion-prefix)
-map  <Leader>cw <Plug>(easymotion-sn)<C-R><C-W><CR>
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
 nmap <Leader>j  <Plug>(easymotion-j)
 nmap <Leader>k  <Plug>(easymotion-k)
+nmap <Leader>ss  <Plug>(easymotion-sn)<C-R>*<CR>
+nmap  <Leader>cw <Plug>(easymotion-sn)<C-R><C-W><CR>
+nmap  ;r <Plug>(easymotion-repeat)<CR>
 
 " Tagbar
-nmap <silent> <F8> :TagbarToggle<CR>
+nmap <silent> ` :TagbarToggle<CR>
 
 " Git
 map <Leader>co  :Gread<CR>
@@ -84,7 +90,7 @@ map <Leader>gac :Gcommit -am ""<LEFT>
 map <Leader>gb  :Gblame<CR>
 map <Leader>gc  :Gcommit -m ""<LEFT>
 map <Leader>gd  :Gvdiff<CR>
-map <Leader>gm  :Gmove<Space>
+map <Leader>gn  :Gmove<Space>
 map <Leader>gr  :Gremove<CR>
 map <Leader>gs  :Gstatus<CR>
 map <Leader>gv  :GV!<CR>
@@ -92,7 +98,7 @@ map <Leader>gk  :GV<CR>
 vmap <Leader>dp  :diffput<CR>
 
 " Rails
-map <Leader>bi  :!bundle install<CR>
+map <Leader>bi  :AsyncRun -mode=term bundle install<CR>
 map <Leader>br   :normal obinding.irb<Esc>
 map <Leader>d   :normal orequire 'pry'; binding.pry<Esc>
 map <Leader>dv  :normal o- require 'pry'; binding.pry<Esc>
@@ -105,12 +111,12 @@ map <Leader>bgv :normal o<% debugger %><Esc>
 map <Leader>ra  :Rails<Space>
 map <Leader>re  :Rextract<Space>
 map <Leader>rk  :Rake<Space>
-map <Leader>mg  :Rake db:create db:migrate<CR>
+map <Leader>mg  :AsyncRun bundle exec rake db:create db:migrate<CR>
 map <Leader>rf  :R<CR>
 map <Leader>rft :RT<CR>
 map <Leader>rfv :RV<CR>
 map <Leader>af  :A<CR>
-map <Leader>at :AT<CR>
+map <Leader>ac :AT<CR>
 map <Leader>av :AV<CR>
 " Edit config/environment.rb or config/application.rb
 map <Leader>ap :Eenvironment<CR>
@@ -149,12 +155,50 @@ map <Leader>tm :Tmodel<Space>
 map <Leader>tv :Tview<Space>
 map <Leader>tc :Tcontroller<Space>
 map <Leader>th :Thelper<Space>
-map <Leader>tf :Tform<Space>
 map <Leader>tq :Tquery<Space>
 map <Leader>tj :Tjavascript<Space>
 map <Leader>tl :Tlib<Space>
 
-" RSpec.vim mappings
-map <Leader>zrs :! zeus rspec %:<C-r>=line('.')<CR><CR>
-map <Leader>rs :! bundle exec rspec %:<C-r>=line('.')<CR><CR>
+" vim-rspec
+map <Leader>rs :call RunCurrentSpecFile()<CR>
+map <Leader>rn :call RunNearestSpec()<CR>
+map <Leader>rp :call RunLastSpec()<CR>
 
+" Terraform
+map <Leader>tp :AsyncRun
+      \ -cwd=$(VIM_FILEDIR)
+      \ terraform plan -no-color<CR>
+map <Leader>tr :AsyncRun
+      \ -cwd=$(VIM_FILEDIR)
+      \ terraform validate -no-color<CR>
+map <Leader>tt :AsyncRun
+      \ -cwd=$(VIM_FILEDIR) -silent -save=1 -post=checktime
+      \ terraform fmt<CR>
+map <Leader>tf :AsyncRun
+      \ -silent -save=1 -post=checktime
+      \ terraform fmt %<CR>
+map <Leader>ta :AsyncRun
+      \ -mode=term -cwd=$(VIM_FILEDIR) -save=1
+      \ terraform apply<CR>
+map <Leader>ti :AsyncRun
+      \ -mode=term -cwd=$(VIM_FILEDIR) -save=1
+      \ terraform init<CR>
+
+" AsyncRun
+map <Leader>ar :AsyncRun -cwd=$(VIM_FILEDIR)<Space>
+map <Leader>at :AsyncRun -mode=term -cwd=$(VIM_FILEDIR)<Space>
+
+" neosnippets
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)"
+      \: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)"
+      \: "\<TAB>"
+
+" GitMessenger
+map '  :GitMessenger<CR>

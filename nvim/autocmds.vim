@@ -13,3 +13,7 @@ augroup END
 augroup templates
   au BufNewFile *.rb so ~/.config/nvim/templates/rb.txt
 augroup END
+
+" Slim syntax highlights
+autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+

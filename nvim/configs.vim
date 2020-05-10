@@ -1,13 +1,11 @@
 " Use deoplete
-" let g:deoplete#enable_at_startup     = 1
-let g:deoplete#disable_auto_complete = 1
-
-" Ultisnips
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
-" let g:UltiSnipsEditSplit="vertical"
-" let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/ftplugin/UltiSnips', 'ftplugin/UltiSnips']
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
+let g:deoplete#enable_at_startup = 1
+call deoplete#initialize()
+call deoplete#custom#option({
+      \ 'smart_case': v:true,
+      \ })
 
 " Indent line
 let g:indentLine_color_term = 239
@@ -16,16 +14,37 @@ let g:indentLine_char = '¦'
 " Lightline
 let g:lightline = { 'colorscheme': 'powerline' }
 
+" ale linting and fixing
+let g:ale_linters = {
+      \ 'javascript': ['eslint'],
+      \ 'c': ['clang', 'gcc'],
+      \ 'ruby': ['rubocop', 'brakeman', 'ruby'],
+      \ 'rust': ['cargo', 'rustc'],
+      \ 'go': ['gofmt', 'golint'],
+      \ 'ansible': ['ansible-lint'],
+      \ 'dockerfile': ['hadolint'],
+      \ 'eruby': ['erubi'],
+      \ 'fish': ['fish'],
+      \ 'json': ['jsonlint'],
+      \ 'racket': ['raco'],
+      \ 'terraform': ['tflint'],
+      \ 'yaml': ['yamllint'],
+      \ }
+let g:ale_fixers = {
+      \ 'ruby': ['rubocop'],
+      \ 'rust': ['rustfmt'],
+      \ 'go': ['gofmt'],
+      \ 'terraform': ['terraform'],
+      \ 'sql': ['sqlfmt'],
+      \ 'json': ['jq'],
+      \ '*': ['trim_whitespace']
+      \ }
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_fix_on_save = 0
+
 " JSX
 let g:jsx_ext_required = 0
 let g:xml_syntax_folding = 1
-let g:syntastic_javascript_checkers = ['eslint']
-
-" Better white space
-" autocmd BufWritePre * StripWhitespace
-
-" Slim syntax highlights
-autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 
 " Netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
@@ -34,20 +53,29 @@ let g:netrw_altv = 1
 let g:netrw_alto = 1
 
 " neosnippets
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-
-imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
 if has('conceal')
-  set conceallevel=2 concealcursor=niv
+  set conceallevel=2
+  set concealcursor=niv
 endif
 
-let g:neosnippet#snippets_directory = ['~/.config/nvim/snippets', '~/.config/nvim/plugged/vim-snippets/snippets']
+let g:neosnippet#snippets_directory = [
+      \ '~/.config/nvim/snippets',
+      \ '~/.config/nvim/plugged/vim-snippets/snippets'
+      \ ]
 
+" terraform
+let g:terraform_completion_keys = 1
+let g:terraform_registry_module_completion = 0
+let g:terraform_fmt_on_save=1
+
+" RSpec
+let g:rspec_command = "AsyncRun -raw -post=ColorHighlight bundle exec rspec {spec}"
+let g:rspec_runner = "os_x_iterm2"
+
+" asyncrun
+let g:asyncrun_open = 12
+
+" EasyMotion
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_enter_jump_first = 1
+let g:EasyMotion_add_search_history=1
