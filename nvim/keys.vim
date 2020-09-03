@@ -81,7 +81,7 @@ nmap  <Leader>cw <Plug>(easymotion-sn)<C-R><C-W><CR>
 nmap  ;r <Plug>(easymotion-repeat)<CR>
 
 " Tagbar
-nmap <silent> ` :TagbarToggle<CR>
+nmap <Leader>tg :TagbarToggle<CR>
 
 " Git
 map <Leader>co  :Gread<CR>
@@ -167,22 +167,25 @@ map <Leader>rp :call RunLastSpec()<CR>
 " Terraform
 map <Leader>tp :AsyncRun
       \ -cwd=$(VIM_FILEDIR)
-      \ terraform plan -no-color<CR>
+      \ terragrunt plan -no-color<CR>
 map <Leader>tr :AsyncRun
       \ -cwd=$(VIM_FILEDIR)
-      \ terraform validate -no-color<CR>
+      \ terragrunt validate -no-color<CR>
+map <Leader>tk :AsyncRun
+      \ -cwd=$(VIM_FILEDIR)
+      \ tflint --no-color<CR>
 map <Leader>tt :AsyncRun
       \ -cwd=$(VIM_FILEDIR) -silent -save=1 -post=checktime
-      \ terraform fmt<CR>
+      \ terragrunt fmt<CR>
 map <Leader>tf :AsyncRun
       \ -silent -save=1 -post=checktime
-      \ terraform fmt %<CR>
+      \ terragrunt fmt %<CR>
 map <Leader>ta :AsyncRun
       \ -mode=term -cwd=$(VIM_FILEDIR) -save=1
-      \ terraform apply<CR>
+      \ terragrunt apply<CR>
 map <Leader>ti :AsyncRun
       \ -mode=term -cwd=$(VIM_FILEDIR) -save=1
-      \ terraform init<CR>
+      \ terragrunt init<CR>
 
 " AsyncRun
 map <Leader>ar :AsyncRun -cwd=$(VIM_FILEDIR)<Space>
@@ -201,4 +204,7 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \: "\<TAB>"
 
 " GitMessenger
-map '  :GitMessenger<CR>
+nmap " <Plug>(git-messenger)
+
+" Neovim terminal
+tnoremap <C-e> <C-\><C-n>

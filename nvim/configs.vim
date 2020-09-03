@@ -1,11 +1,17 @@
 " Use deoplete
-let g:deoplete#omni_patterns = {}
-let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
 let g:deoplete#enable_at_startup = 1
 call deoplete#initialize()
 call deoplete#custom#option({
       \ 'smart_case': v:true,
       \ })
+
+" Disable deoplete when using multiple cursor
+function g:Multiple_cursors_before()
+  call deoplete#custom#buffer_option('auto_complete', v:false)
+endfunction
+function g:Multiple_cursors_after()
+  call deoplete#custom#buffer_option('auto_complete', v:true)
+endfunction
 
 " Indent line
 let g:indentLine_color_term = 239
@@ -16,9 +22,10 @@ let g:lightline = { 'colorscheme': 'powerline' }
 
 " ale linting and fixing
 let g:ale_linters = {
-      \ 'javascript': ['eslint'],
+      \ 'javascript': ['eslint', 'prettier'],
+      \ 'typescript': ['eslint', 'prettier', 'typecheck'],
       \ 'c': ['clang', 'gcc'],
-      \ 'ruby': ['rubocop', 'brakeman', 'ruby'],
+      \ 'ruby': ['ruby'],
       \ 'rust': ['cargo', 'rustc'],
       \ 'go': ['gofmt', 'golint'],
       \ 'ansible': ['ansible-lint'],
@@ -31,12 +38,14 @@ let g:ale_linters = {
       \ 'yaml': ['yamllint'],
       \ }
 let g:ale_fixers = {
+      \ 'javascript': ['eslint', 'prettier'],
+      \ 'typescript': ['eslint', 'prettier'],
       \ 'ruby': ['rubocop'],
       \ 'rust': ['rustfmt'],
       \ 'go': ['gofmt'],
       \ 'terraform': ['terraform'],
       \ 'sql': ['sqlfmt'],
-      \ 'json': ['jq'],
+      \ 'json': ['jq', 'fixjson'],
       \ '*': ['trim_whitespace']
       \ }
 let g:ale_lint_on_text_changed = 'normal'
@@ -64,12 +73,10 @@ let g:neosnippet#snippets_directory = [
       \ ]
 
 " terraform
-let g:terraform_completion_keys = 1
-let g:terraform_registry_module_completion = 0
 let g:terraform_fmt_on_save=1
 
 " RSpec
-let g:rspec_command = "AsyncRun -raw -post=ColorHighlight bundle exec rspec {spec}"
+let g:rspec_command = "AsyncRun -mode=term bundle exec rspec {spec}"
 let g:rspec_runner = "os_x_iterm2"
 
 " asyncrun
@@ -79,3 +86,15 @@ let g:asyncrun_open = 12
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_add_search_history=1
+
+" vim-move
+let g:move_key_modifier = 'C'
+
+" git-messenger
+let g:git_messenger_no_default_mappings = v:true
+let g:git_messenger_always_into_popup = v:true
+
+" Fix slow Gstatus
+" https://github.com/tpope/vim-fugitive/issues/1176
+set shell=/bin/bash\ --login
+
