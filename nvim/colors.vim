@@ -1,5 +1,5 @@
 " Set colorscheme to solarized
-"set termguicolors
+set termguicolors
 set background=dark
-colorscheme NeoSolarized
+colorscheme solarized8
 set t_Co=256

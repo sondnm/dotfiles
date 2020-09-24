@@ -2,7 +2,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " Interface
-Plug 'iCyMind/NeoSolarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'itchyny/lightline.vim'
 Plug 'yggdroot/indentline'
 
