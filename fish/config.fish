@@ -1,7 +1,7 @@
 fish_vi_key_bindings
 source $HOME/.config/fish/functions/__fit.fish
 [ -e $HOME/.config/fish/config.fish.local ]; and source $HOME/.config/fish/config.fish.local
-set -g GOPATH $HOME/go/
+set -g GOPATH $HOME/go
 set -g GOROOT (brew --prefix golang)/libexec
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/mysql/bin" $fish_user_paths
