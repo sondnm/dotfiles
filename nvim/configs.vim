@@ -4,6 +4,7 @@ call deoplete#initialize()
 call deoplete#custom#option({
       \ 'smart_case': v:true,
       \ })
+let g:tmuxcomplete#trigger = 'omnifunc'
 
 " Disable deoplete when using multiple cursor
 function g:Multiple_cursors_before()
@@ -98,3 +99,16 @@ let g:git_messenger_always_into_popup = v:true
 " https://github.com/tpope/vim-fugitive/issues/1176
 set shell=/bin/bash\ --login
 
+" FZF
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --hidden --no-ignore -l "" -g "!.git/*"'
+else
+  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+endif
+
+" Signify
+set updatetime=100
+let g:signify_sign_change = '~'
+if executable('delta')
+  let g:signify_difftool = 'delta'
+endif

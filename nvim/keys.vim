@@ -5,6 +5,8 @@ map  <silent> <Leader>pi :PlugInstall<CR>
 map  <silent> <Leader>pu :PlugUpdate<CR>
 map  <silent> <Leader>pg :PlugUpgrade<CR>
 map  <silent> <Leader>pc :PlugClean!<CR>
+map  <silent> <Leader>pl :vsp $HOME/.config/nvim/plugins.vim<CR>
+map  <silent> <Leader>pk :vsp $HOME/.config/nvim/keys.vim<CR>
 map  <silent> <Leader>rl :source $HOME/.config/nvim/init.vim<CR>
 map  <silent> <Leader>w  :w<CR>
 map  <silent> <Leader>q  :q<CR>
@@ -14,7 +16,7 @@ map  <silent> <Leader>n  :vsp<CR>
 map  <silent> <Leader>df :Remove!<CR>
 map  <Leader>mv :Move<Space>
 map  <silent> <Leader>ct :AsyncRun -silent
-      \ ctags -R --exclude={.git,log,tmp,node_modules,"vendor","*.min.js","*.min.css"}<CR>
+      \ ctags -R --exclude={.git,log,tmp,node_modules,vendor,"*.min.js","*.min.css"}<CR>
 nmap <CR> ]<Space>
 nmap <S-CR> [<Space>
 map <Leader>aa :normal ggVG<CR>
@@ -58,27 +60,29 @@ map <Leader>te :tabe<Space>
 map <F7> mzgg=G`z
 
 " Searches ------------------------------
-map <Leader>ag :Ag<Space>
-map <C-p> :Files<CR>
+if executable('rg')
+  map <Leader>ag :Rg<Space>
+  nmap <silent> fw :Rg <C-R><C-W><CR>
+else
+  map <Leader>ag :Ag<Space>
+  nmap <silent> fw :Ag <C-R><C-W><CR>
+endif
+
 map <Leader>cm :Commits<CR>
 map <Leader>cb :BCommits<CR>
-nmap <silent> fw :Ag <C-R><C-W><CR>
-
-" Autocomplete & snippets
-inoremap <silent><expr> <C-j> "\<C-n>"
-inoremap <silent><expr> <C-k> "\<C-p>"
+map <C-p> :Files<CR>
 
 " Easymotion
-map  ;  <Plug>(easymotion-prefix)
 map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
+map  ;  <Plug>(easymotion-prefix)
 map  N <Plug>(easymotion-prev)
+map  n <Plug>(easymotion-next)
+nmap  ;r <Plug>(easymotion-repeat)<CR>
+nmap <Leader>cw <Plug>(easymotion-sn)<C-R><C-W><CR>
 nmap <Leader>j  <Plug>(easymotion-j)
 nmap <Leader>k  <Plug>(easymotion-k)
 nmap <Leader>ss  <Plug>(easymotion-sn)<C-R>*<CR>
-nmap  <Leader>cw <Plug>(easymotion-sn)<C-R><C-W><CR>
-nmap  ;r <Plug>(easymotion-repeat)<CR>
+omap / <Plug>(easymotion-tn)
 
 " Tagbar
 nmap <Leader>tg :TagbarToggle<CR>
@@ -92,7 +96,7 @@ map <Leader>gc  :Gcommit -m ""<LEFT>
 map <Leader>gd  :Gvdiff<CR>
 map <Leader>gn  :Gmove<Space>
 map <Leader>gr  :Gremove<CR>
-map <Leader>gs  :Gstatus<CR>
+map <Leader>gs  :Git<CR>
 map <Leader>gv  :GV!<CR>
 map <Leader>gk  :GV<CR>
 vmap <Leader>dp  :diffput<CR>
@@ -186,15 +190,23 @@ map <Leader>ta :AsyncRun
 map <Leader>ti :AsyncRun
       \ -mode=term -cwd=$(VIM_FILEDIR) -save=1
       \ terragrunt init<CR>
+map <Leader>tn :AsyncRun
+      \ -cwd=$(VIM_FILEDIR) -silent -post=checktime
+      \ touch {main,variables,outputs,versions}.tf<CR>
 
 " AsyncRun
 map <Leader>ar :AsyncRun -cwd=$(VIM_FILEDIR)<Space>
 map <Leader>at :AsyncRun -mode=term -cwd=$(VIM_FILEDIR)<Space>
 
+
+" Autocomplete & snippets
+inoremap <silent><expr> <C-j> "\<C-n>"
+inoremap <silent><expr> <C-k> "\<C-p>"
+
 " neosnippets
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
+" imap <C-k> <Plug>(neosnippet_expand_or_jump)
+" smap <C-k> <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k> <Plug>(neosnippet_expand_target)
 
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \ "\<Plug>(neosnippet_expand_or_jump)"

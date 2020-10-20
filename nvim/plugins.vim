@@ -10,15 +10,21 @@ Plug 'yggdroot/indentline'
 Plug 'junegunn/vim-easy-align'
 Plug 'easymotion/vim-easymotion'
 Plug 'matze/vim-move'
-" Plug 'terryma/vim-multiple-cursors'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'christoomey/vim-tmux-navigator'
 
 " Completion & Snippets
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'honza/vim-snippets'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'wellle/tmux-complete.vim'
+
+" Searches
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'majutsushi/tagbar'
 
 " Integrations
 Plug 'tpope/vim-vinegar'
@@ -28,19 +34,18 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 " Plug 'mattn/gist-vim'
-Plug 'majutsushi/tagbar'
 Plug 'junegunn/gv.vim'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-sensible'
 Plug 'rhysd/git-messenger.vim'
+" Plug 'tpope/vim-projectionist'
 
 " Commands
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'wellle/targets.vim'
 
 " Languages & framework support
 Plug 'vim-ruby/vim-ruby'
