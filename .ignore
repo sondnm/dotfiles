@@ -1,0 +1,12 @@
+.git/*
+.terragrunt-cache/*
+
+*.jpg
+*.png
+*.svg
+
+*.min.js
+*.min.css
+*.min.scss
+
+*.cache
