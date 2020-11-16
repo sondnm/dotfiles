@@ -7,18 +7,18 @@ map  <silent> <Leader>pg :PlugUpgrade<CR>
 map  <silent> <Leader>pc :PlugClean!<CR>
 map  <silent> <Leader>pl :vsp $HOME/.config/nvim/plugins.vim<CR>
 map  <silent> <Leader>pk :vsp $HOME/.config/nvim/keys.vim<CR>
+map  <silent> <Leader>pp :vsp $HOME/.config/nvim/configs.vim<CR>
 map  <silent> <Leader>rl :source $HOME/.config/nvim/init.vim<CR>
 map  <silent> <Leader>w  :w<CR>
 map  <silent> <Leader>q  :q<CR>
-map  <silent> <C-c>      "*y
-map  <silent> <Leader>v  "*p
+map  <silent> <C-c>      "+y
+map  <silent> <Leader>v  "+p
 map  <silent> <Leader>n  :vsp<CR>
 map  <silent> <Leader>df :Remove!<CR>
 map  <Leader>mv :Move<Space>
-map  <silent> <Leader>ct :AsyncRun -silent
-      \ ctags -R --exclude={.git,log,tmp,node_modules,vendor,"*.min.js","*.min.css"}<CR>
+map  <silent> <Leader>ct :AsyncRun -silent ctags -R<CR>
 nmap <CR> ]<Space>
-nmap <S-CR> [<Space>
+nmap <C-CR> [<Space>
 map <Leader>aa :normal ggVG<CR>
 map <Leader>ya :%y+<CR>
 map <Leader>da :%d<CR>
@@ -26,6 +26,7 @@ map <Leader>f :ALEFix<CR>
 nmap cp <Esc>
 map <Leader>bf :Buffers<CR>
 noremap <silent> cp :let @+=expand("%:p")<CR>
+noremap <silent> cf :let @+=expand("%:t")<CR>
 nmap <Leader>bd :bufdo bd<CR>
 
 " Movements --------------------
@@ -33,6 +34,11 @@ nmap <BS> <C-w>h
 nmap <Leader><Leader> <C-^>
 vmap <C-k> <Plug>MoveBlockUp
 vmap <C-j> <Plug>MoveBlockDown
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <c-l> <C-w><C-l>
+
 " ZoomFullPanel
 nmap Z <C-w>\|
 " UnZoom
@@ -61,12 +67,13 @@ map <F7> mzgg=G`z
 
 " Searches ------------------------------
 if executable('rg')
-  map <Leader>ag :Rg<Space>
+  nmap <Leader>ag :Rg<Space>
   nmap <silent> fw :Rg <C-R><C-W><CR>
 else
-  map <Leader>ag :Ag<Space>
+  nmap <Leader>ag :Ag<Space>
   nmap <silent> fw :Ag <C-R><C-W><CR>
 endif
+nmap <silent> ft :Tags <C-R><C-W><CR>
 
 map <Leader>cm :Commits<CR>
 map <Leader>cb :BCommits<CR>
@@ -77,11 +84,11 @@ map  / <Plug>(easymotion-sn)
 map  ;  <Plug>(easymotion-prefix)
 map  N <Plug>(easymotion-prev)
 map  n <Plug>(easymotion-next)
-nmap  ;r <Plug>(easymotion-repeat)<CR>
+nmap ;r <Plug>(easymotion-repeat)<CR>
 nmap <Leader>cw <Plug>(easymotion-sn)<C-R><C-W><CR>
-nmap <Leader>j  <Plug>(easymotion-j)
-nmap <Leader>k  <Plug>(easymotion-k)
-nmap <Leader>ss  <Plug>(easymotion-sn)<C-R>*<CR>
+nmap <Leader>j <Plug>(easymotion-j)
+nmap <Leader>k <Plug>(easymotion-k)
+nmap <Leader>ss <Plug>(easymotion-sn)<C-R>*<CR>
 omap / <Plug>(easymotion-tn)
 
 " Tagbar
@@ -216,7 +223,7 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \: "\<TAB>"
 
 " GitMessenger
-nmap " <Plug>(git-messenger)
+nmap , <Plug>(git-messenger)
 
 " Neovim terminal
 tnoremap <C-e> <C-\><C-n>

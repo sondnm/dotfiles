@@ -40,7 +40,7 @@ Plug 'junegunn/gv.vim'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-sensible'
 Plug 'rhysd/git-messenger.vim'
-" Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-projectionist'
 
 " Commands
 Plug 'tpope/vim-surround'

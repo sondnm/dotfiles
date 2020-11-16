@@ -17,4 +17,5 @@ augroup END
 " Slim syntax highlights
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 autocmd BufNewFile,BufRead *.hcl setlocal filetype=terraform
+autocmd BufNewFile,BufRead *.nomad setlocal filetype=terraform
 

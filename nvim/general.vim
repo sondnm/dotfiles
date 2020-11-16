@@ -19,6 +19,9 @@ set showmatch                  " Highlight matching [{()}]
 set clipboard=unnamed
 set scrolloff=5
 set nocompatible
+set splitbelow
+set splitright
+set noshowmode                 " Don't show INSERT/NORMAL mode line
 
 " Turn Off Swap Files ------------------------------
 

@@ -19,7 +19,23 @@ let g:indentLine_color_term = 239
 let g:indentLine_char = '¦'
 
 " Lightline
-let g:lightline = { 'colorscheme': 'powerline' }
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ ['mode', 'paste'],
+      \             ['gitbranch', 'readonly', 'filename', 'modified'] ],
+      \   'right': [ ['lineinfo'],
+      \              ['percent'],
+      \              ['fileformat', 'fileencoding', 'filetype'] ],
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead',
+      \ }
+      \ }
+let g:lightline.tab = {
+      \ 'active': [ 'tabnum', 'filename', 'modified' ],
+      \ 'inactive': [ 'tabnum', 'filename', 'modified' ]
+      \ }
 
 " ale linting and fixing
 let g:ale_linters = {
@@ -36,6 +52,7 @@ let g:ale_linters = {
       \ 'json': ['jsonlint'],
       \ 'racket': ['raco'],
       \ 'terraform': ['tflint'],
+      \ 'hcl': ['terraform-fmt'],
       \ 'yaml': ['yamllint'],
       \ }
 let g:ale_fixers = {
@@ -44,6 +61,7 @@ let g:ale_fixers = {
       \ 'ruby': ['rubocop'],
       \ 'rust': ['rustfmt'],
       \ 'go': ['gofmt'],
+      \ 'hcl': ['terraform-fmt'],
       \ 'terraform': ['terraform'],
       \ 'sql': ['sqlfmt'],
       \ 'json': ['jq', 'fixjson'],
@@ -51,6 +69,7 @@ let g:ale_fixers = {
       \ }
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_fix_on_save = 0
+let g:ale_ruby_rubocop_executable = 'bundle'
 
 " JSX
 let g:jsx_ext_required = 0
@@ -101,10 +120,40 @@ set shell=/bin/bash\ --login
 
 " FZF
 if executable('rg')
-  let $FZF_DEFAULT_COMMAND = 'rg --hidden --no-ignore -l "" -g "!.git/*"'
+  let $FZF_DEFAULT_COMMAND = 'rg --hidden --no-ignore -l "" -g "!{log,.git,.terragrunt-cache}/" -g "!tmp/cache" -g "!*.{jpg,png,svg,cache,min.css,min.js,min.scss}"'
+elseif executable('fd')
+  let $FZF_DEFAULT_OPTS = '--ansi'
+  let $FZF_DEFAULT_COMMAND = 'fd --hidden --color always -E "{.git,.terragrunt-cache,log,tmp}/*","*.{jpg,png,svg,cache}","*.min.{scss,css,js}"'
 else
   let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 endif
+
+function! s:fzf_grep_filter(include_pattern, exclude_pattern, qargs, bang)
+  call fzf#vim#grep(
+        \   'rg --column --line-number --no-heading --color=always --smart-case -g "'.a:include_pattern.'" --glob "'.a:exclude_pattern.'" -- '.shellescape(a:qargs), 1,
+        \   fzf#vim#with_preview(), a:bang)
+endfunction
+
+command! -bang -nargs=* Rgmodel
+      \ call s:fzf_grep_filter("app/models/**/*.{rb}", "", <q-args>, <bang>0)
+
+command! -bang -nargs=* Rgview
+      \ call s:fzf_grep_filter("app/views/**/*.{haml,erb,slim,txt}", "", <q-args>, <bang>0)
+
+command! -bang -nargs=* Rgcontroller
+      \ call s:fzf_grep_filter("app/controllers/**/*.{rb}", "", <q-args>, <bang>0)
+
+command! -bang -nargs=* Rgblueprint
+      \ call s:fzf_grep_filter("app/blueprints/**/*.{rb}", "", <q-args>, <bang>0)
+
+command! -bang -nargs=* Rgquery
+      \ call s:fzf_grep_filter("app/queries/**/*.{rb}", "", <q-args>, <bang>0)
+
+command! -bang -nargs=* Rgform
+      \ call s:fzf_grep_filter("app/forms/**/*.{rb}", "", <q-args>, <bang>0)
+
+command! -bang -nargs=* Rgasset
+      \ call s:fzf_grep_filter("app/assets/**/*.{scss,css,js,ts,es6}", "", <q-args>, <bang>0)
 
 " Signify
 set updatetime=100
