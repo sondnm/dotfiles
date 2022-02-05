@@ -20,3 +20,19 @@ done
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
+export PATH="~/Library/Python/3.6/bin:$PATH"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH="$HOME/.crenv/bin:$PATH"
+eval "$(crenv init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/Downloads/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc"; fi
+export GOPATH=$HOME/go
+# export GOROOT=/usr/local/Cellar/go/1.9.2/libexec
+export JAVA_HOME=$(/usr/libexec/java_home)

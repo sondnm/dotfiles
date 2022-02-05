@@ -1,8 +1,11 @@
 " This file includes all plugins used
 call plug#begin('~/.config/nvim/plugged')
 
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Interface
-Plug 'lifepillar/vim-solarized8'
+" Plug 'lifepillar/vim-solarized8'
+Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'yggdroot/indentline'
 
@@ -12,6 +15,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'matze/vim-move'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'christoomey/vim-tmux-navigator'
+" Plug 'justinmk/vim-dirvish'
 
 " Completion & Snippets
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -20,6 +24,7 @@ Plug 'honza/vim-snippets'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'wellle/tmux-complete.vim'
+Plug 'mattn/emmet-vim'
 
 " Searches
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -34,7 +39,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
-Plug 'mhinz/vim-signify'
+" Plug 'mhinz/vim-signify'
 " Plug 'mattn/gist-vim'
 Plug 'junegunn/gv.vim'
 Plug 'neomake/neomake'
@@ -48,10 +53,12 @@ Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
 
 " Languages & framework support
+Plug 'ziglang/zig.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'posva/vim-vue'
 Plug 'fatih/vim-go'
 " Plug 'neovimhaskell/haskell-vim'
 " Plug 'eagletmt/neco-ghc'
@@ -59,8 +66,8 @@ Plug 'fatih/vim-go'
 " Plug 'c.vim'
 " Plug 'st.vim'
 Plug 'thoughtbot/vim-rspec'
-" Plug 'chemzqm/vim-jsx-improve'
-" Plug 'maxmellon/vim-jsx-pretty'
+Plug 'chemzqm/vim-jsx-improve'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'rust-lang/rust.vim'
 " Plug 'JuliaEditorSupport/julia-vim'
 " Plug 'posva/vim-vue'
@@ -68,9 +75,11 @@ Plug 'hashivim/vim-terraform'
 " Plug 'juliosueiras/vim-terraform-completion'
 Plug 'pearofducks/ansible-vim'
 Plug 'leafgarland/typescript-vim'
-" Plug 'peitalin/vim-jsx-typescript'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'cespare/vim-toml'
+Plug 'jidn/vim-dbml'
+Plug 'tomlion/vim-solidity'
 
 " Asynchronous
 Plug 'skywind3000/asyncrun.vim'

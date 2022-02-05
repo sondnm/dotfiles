@@ -20,7 +20,7 @@ let g:indentLine_char = '¦'
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ ['mode', 'paste'],
       \             ['gitbranch', 'readonly', 'filename', 'modified'] ],
@@ -39,11 +39,12 @@ let g:lightline.tab = {
 
 " ale linting and fixing
 let g:ale_linters = {
-      \ 'javascript': ['eslint', 'prettier'],
-      \ 'typescript': ['eslint', 'prettier', 'typecheck'],
+      \ 'javascript': ['prettier', 'eslint'],
+      \ 'typescript': ['prettier', 'eslint', 'typecheck'],
       \ 'c': ['clang', 'gcc'],
       \ 'ruby': ['ruby'],
-      \ 'rust': ['cargo', 'rustc'],
+      \ 'python': ['pylint'],
+      \ 'rust': ['analyzer'],
       \ 'go': ['gofmt', 'golint'],
       \ 'ansible': ['ansible-lint'],
       \ 'dockerfile': ['hadolint'],
@@ -53,6 +54,7 @@ let g:ale_linters = {
       \ 'racket': ['raco'],
       \ 'terraform': ['tflint'],
       \ 'hcl': ['terraform-fmt'],
+      \ 'solidity': ['solhint'],
       \ 'yaml': ['yamllint'],
       \ }
 let g:ale_fixers = {
@@ -65,6 +67,7 @@ let g:ale_fixers = {
       \ 'terraform': ['terraform'],
       \ 'sql': ['sqlfmt'],
       \ 'json': ['jq', 'fixjson'],
+      \ 'solidity': ['solhint'],
       \ '*': ['trim_whitespace']
       \ }
 let g:ale_lint_on_text_changed = 'normal'
@@ -161,3 +164,6 @@ let g:signify_sign_change = '~'
 if executable('delta')
   let g:signify_difftool = 'delta'
 endif
+
+" Dirvish
+" let g:dirvish_mode = ':silent keeppatterns g@\v/\.[^\/]+/?$@d _'

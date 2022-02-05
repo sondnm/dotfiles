@@ -37,7 +37,9 @@ vmap <C-j> <Plug>MoveBlockDown
 nnoremap <C-h> <C-w><C-h>
 nnoremap <C-j> <C-w><C-j>
 nnoremap <C-k> <C-w><C-k>
-nnoremap <c-l> <C-w><C-l>
+nnoremap <C-l> <C-w><C-l>
+
+nmap <F5> <Plug>NetrwRefresh
 
 " ZoomFullPanel
 nmap Z <C-w>\|
@@ -98,7 +100,7 @@ nmap <Leader>tg :TagbarToggle<CR>
 map <Leader>co  :Gread<CR>
 map <Leader>ga  :Gwrite<CR>
 map <Leader>gac :Gcommit -am ""<LEFT>
-map <Leader>gb  :Gblame<CR>
+map <Leader>gb  :Git blame<CR>
 map <Leader>gc  :Gcommit -m ""<LEFT>
 map <Leader>gd  :Gvdiff<CR>
 map <Leader>gn  :Gmove<Space>

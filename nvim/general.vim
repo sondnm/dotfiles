@@ -11,8 +11,8 @@ set visualbell                 " No sounds
 set autoread                   " Reload files changed outside vim
 set laststatus=2               " Always display the status line
 set autowrite                  " Automatically :write before running commands
-set cursorline                 " Highlight current line
-set cursorcolumn               " Highlight current column
+" set cursorline                 " Highlight current line slow af
+" set cursorcolumn               " Highlight current column slow af
 set wildmenu                   " Visual autocomplete for command menu
 set lazyredraw                 " Redraw only when we need to
 set showmatch                  " Highlight matching [{()}]

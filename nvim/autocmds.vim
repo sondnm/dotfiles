@@ -10,12 +10,19 @@ augroup Binary
   au BufWritePost *.bin set nomod | endif
 augroup END
 
+augroup filetypes
+  au BufNewFile,BufRead *.sol setfiletype solidity
+augroup END
+
 augroup templates
-  au BufNewFile *.rb so ~/.config/nvim/templates/rb.txt
+  " au BufNewFile *.rb so ~/.config/nvim/templates/rb.txt
+  au BufNewFile *.yml so ~/.config/nvim/templates/yml.txt
 augroup END
 
 " Slim syntax highlights
-autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
-autocmd BufNewFile,BufRead *.hcl setlocal filetype=terraform
-autocmd BufNewFile,BufRead *.nomad setlocal filetype=terraform
+augroup syntax_highlighting
+  autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+  autocmd BufNewFile,BufRead *.hcl setlocal filetype=terraform
+  autocmd BufNewFile,BufRead *.nomad setlocal filetype=terraform
+augroup END
 
