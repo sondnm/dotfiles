@@ -1,3 +1,7 @@
+function git_current_branch
+  git rev-parse --abbrev-ref HEAD
+end
+
 # Log
 set _git_log_oneline_format '%C(green)%h%C(reset) %s%C(red)%d%C(reset)%n'
 
