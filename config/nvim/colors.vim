@@ -1,4 +1,4 @@
-" Set colorscheme to solarized
+" Set colorscheme
 set termguicolors
 set background=dark
 colorscheme gruvbox

@@ -8,9 +8,13 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 set -g GOROOT  $HOME/go
 set -g fish_user_paths "$GOROOT/bin" $fish_user_paths;
-set -g fish_user_paths "$HOME/.cargo/bin" $fish_user_paths;
 set -g fish_user_paths "/usr/local/i386elfgcc/bin/" $fish_user_paths
+set -g fish_user_paths "$HOME/.cargo/bin" $fish_user_paths;
 set -g fish_user_paths "$HOME/.local/share/solana/install/active_release/bin" $fish_user_paths;
+set -g fish_user_paths "$HOME/.local/bin" $fish_user_paths
+set -g fish_user_paths "$HOME/.yarn/bin" $fish_user_paths
+
+source /opt/asdf-vm/asdf.fish
 
 set -x LANG en_US.UTF-8
 status --is-interactive
