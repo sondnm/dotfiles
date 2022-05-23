@@ -1,9 +1,0 @@
-# Run rubocop on added and modified files
-#! /bin/sh
-
-inspected_files=$(git diff --diff-filter=ACMR --name-only HEAD)
-
-if [ $inspected_files ];
-then
-  bundle exec rubocop $inspected_files --force-exclusion --auto-correct
-fi

@@ -1,0 +1,36 @@
+[color]
+  ui = true
+
+[user]
+	name = Son Dang
+	email = sondangdev@gmail.com
+
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = nvim
+  pager = delta
+
+[page]
+  diff = delta
+  show = delta
+  log = delta
+  blame = delta
+  reflog = delta
+
+[delta]
+  syntax-theme = gruvbox-light
+  line-numbers = true
+  side-by-side = true
+  navigate = true
+
+[interactive]
+  diffFilter = delta --color-only
+
+[pull]
+  rebase = false
+
+[includeIf "gitdir:~/code/blockchain/"]
+  path = ~/code/blockchain/.gitconfig
+
+[includeIf "gitdir:/data/son/code/blockchain/"]
+  path = /data/son/code/blockchain/.gitconfig

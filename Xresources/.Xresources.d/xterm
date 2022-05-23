@@ -1,5 +1,0 @@
-XTerm*background: S_base03
-XTerm*foreground: S_base0
-XTerm*reverseVideo: on
-XTerm*faceName: S_font
-XTerm*selectToClipboard: true

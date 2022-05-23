@@ -1,32 +1,16 @@
-*/nvim/plugged/
+.config/nvim/plugged/
+.config/tmux/plugins/
+.config/tmuxp/*
 tags
 .netrwhist
 
-# Haskell
-dist
-dist-*
-cabal-dev
-*.o
-*.hi
-*.hie
-*.chi
-*.chs.h
-*.dyn_o
-*.dyn_hi
-.hpc
-.hsenv
-.cabal-sandbox/
-cabal.sandbox.config
-*.prof
-*.aux
-*.hp
-*.eventlog
-.stack-work/
-cabal.project.local
-cabal.project.local~
-.HTF/
-.ghc.environment.*
-
-# xmonad
-*.errors
-xmonad-x86_64-linux*
+# fish gitignore (painful)
+.config/fish/*
+.config/fish/conf.d/*
+.config/fish/functions/*
+!.config/fish/config.fish
+!.config/fish/fish_plugins
+!.config/fish/conf.d/
+!.config/fish/conf.d/aliases.fish
+!.config/fish/functions/
+!.config/fish/functions/git.fish

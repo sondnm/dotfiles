@@ -1,0 +1,144 @@
+[global/wm]
+
+[colors]
+background = #222
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #888
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/main]
+monitor = ${env:DisplayPort-0}
+width = 100%
+height = 2.5%
+radius = 0
+fixed-center = false
+bottom = false
+
+locale = en_US.UTF-8
+
+enable-ipc = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 0
+line-size = 2
+padding = 1
+module-margin = 1
+
+font-0 = "monospace:size=10;1"
+font-1 = "FontAwesome6Free:style=Solid:size=10;1"
+font-2 = "FontAwesome6Free:style=Regular:size=10;1"
+
+modules-left = bspwm xwindow
+modules-center =
+modules-right = cpu memory separator volume separator network separator date
+
+tray-position = right
+tray-padding = 2
+tray-maxsize = 24
+
+wm-restack = bspwm
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = false
+enable-click = false
+enable-scroll = false
+
+label-focused = " %name% "
+label-focused-underline = #fba922
+
+label-occupied = " %name% "
+label-occupied-foreground = #ffaa00
+
+label-urgent = " %name% "
+label-urgent-underline = #9b0a20
+
+label-empty = " %name% "
+label-empty-foreground = #555555
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %percentage_used:2%%
+
+[module/network]
+type = internal/network
+interface = wlan0
+interval = 5.0
+
+accumulate-stats = true
+
+format-connected-underline = ${colors.white}
+format-disconnected-underline = ${colors.white}
+
+format-connected = %{F#888} %{F-}<label-connected>
+
+format-disconnected = <label-disconnected>
+
+format-packetloss = <animation-packetloss> <label-connected>
+
+label-connected = %signal:3%% - %essid%
+
+label-disconnected = %{F#928374} %{F-}none
+
+animation-packetloss-0 = ⚠
+animation-packetloss-1 = 📶
+animation-packetloss-framerate = 500
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = %a %b %d
+date-alt = %b/%m/%Y
+
+time = %H:%M
+time-alt = %I:%M%p
+
+format-prefix =
+format-prefix-foreground = ${colors.foreground-alt}
+
+label = %date% %time%
+
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume> 
+
+format-volume-underline = ${colors.white}
+
+label-volume = %{F#888} %{F-}%percentage:2%%
+label-volume-foreground = ${color.white}
+
+label-muted =%{F#928374} %{F-}mute
+format-muted = <label-muted>
+format-muted-underline = ${colors.white}
+label-muted-foreground = ${colors.gray}
+
+[module/separator]
+type = custom/text
+content = |
+content-foreground = #4e4e4e
+
+[settings]
+screenchange-reload = true
+
+; vim:ft=dosini

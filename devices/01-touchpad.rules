@@ -1,3 +1,0 @@
-# /etc/udev/rules.d/01-touchpad.rules
-SUBSYSTEM=="input", KERNEL=="mouse0", ACTION=="add", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/username/.Xauthority", RUN+="xinput disable `xinput list | grep -Eio '(touchpad|glidepoint)\s*id\=[0-9]{1,2}' | grep -Eo '[0-9]{1,2}'`"
-SUBSYSTEM=="input", KERNEL=="mouse0", ACTION=="remove", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/username/.Xauthority", RUN+="xinput enable `xinput list | grep -Eio '(touchpad|glidepoint)\s*id\=[0-9]{1,2}' | grep -Eo '[0-9]{1,2}'`"
