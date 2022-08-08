@@ -122,11 +122,11 @@ let g:git_messenger_always_into_popup = v:true
 set shell=/bin/bash\ --login
 
 " FZF
-if executable('rg')
-  let $FZF_DEFAULT_COMMAND = 'rg --hidden --no-ignore -l "" -g "!{log,.git,.terragrunt-cache}/" -g "!tmp/cache" -g "!*.{jpg,png,svg,cache,min.css,min.js,min.scss}"'
-elseif executable('fd')
+if executable('fd')
   let $FZF_DEFAULT_OPTS = '--ansi'
-  let $FZF_DEFAULT_COMMAND = 'fd --hidden --color always -E "{.git,.terragrunt-cache,log,tmp}/*","*.{jpg,png,svg,cache}","*.min.{scss,css,js}"'
+  let $FZF_DEFAULT_COMMAND = 'fd --hidden --color always --exclude "{.git,.terragrunt-cache,log,tmp}/*","*.{jpg,png,svg,cache}","*.min.{scss,css,js}"'
+elseif executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --hidden -l "" -g "!{log,.git,.terragrunt-cache}/" -g "!tmp/cache" -g "!*.{jpg,png,svg,cache,min.css,min.js,min.scss}"'
 else
   let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 endif
