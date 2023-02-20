@@ -99,12 +99,12 @@ nmap <Leader>tg :TagbarToggle<CR>
 " Git
 map <Leader>co  :Gread<CR>
 map <Leader>ga  :Gwrite<CR>
-map <Leader>gac :Gcommit -am ""<LEFT>
+map <Leader>gac :Git commit -am ""<LEFT>
 map <Leader>gb  :Git blame<CR>
-map <Leader>gc  :Gcommit -m ""<LEFT>
+map <Leader>gc  :Git commit -m ""<LEFT>
 map <Leader>gd  :Gvdiff<CR>
-map <Leader>gn  :Gmove<Space>
-map <Leader>gr  :Gremove<CR>
+map <Leader>gn  :GMove<Space>
+map <Leader>gr  :GRemove<CR>
 map <Leader>gs  :Git<CR>
 map <Leader>gv  :GV!<CR>
 map <Leader>gk  :GV<CR>

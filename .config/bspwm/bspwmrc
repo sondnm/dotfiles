@@ -20,4 +20,5 @@ bspc rule -a ticktick desktop='^4' follow=off
 bspc rule -a discord desktop='^5' follow=on
 bspc rule -a discord-ptb desktop='^5' follow=on
 bspc rule -a telegram-desktop desktop='^5' follow=on
+bspc rule -a dbeaver desktop='^5'
 bspc rule -a authy state=floating

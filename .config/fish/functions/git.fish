@@ -28,8 +28,8 @@ alias gpl='git pull'
 alias gia='git add'
 
 # Log (l)
-alias glo='git log --topo-order --pretty=format:"$_git_log_oneline_format"'
-alias glg='git log --topo-order --all --graph --pretty=format:"$_git_log_oneline_format"'
+alias glo='git log --show-signature --topo-order --pretty=format:"$_git_log_oneline_format"'
+alias glg='git log --show-signature --topo-order --all --graph --pretty=format:"$_git_log_oneline_format"'
 
 # Merge (m)
 alias gm='git merge'

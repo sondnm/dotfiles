@@ -2,8 +2,11 @@
   ui = true
 
 [user]
-	name = Son Dang
-	email = sondangdev@gmail.com
+  name = Son Dang
+  email = sondangdev@gmail.com
+
+[commit]
+  gpgsign = true
 
 [core]
   excludesfile = ~/.gitignore_global
@@ -29,8 +32,8 @@
 [pull]
   rebase = false
 
-[includeIf "gitdir:~/code/blockchain/"]
-  path = ~/code/blockchain/.gitconfig
+[includeIf "gitdir:/data/son/code/"]
+  path = ~/code/.gitconfig
 
-[includeIf "gitdir:/data/son/code/blockchain/"]
-  path = /data/son/code/blockchain/.gitconfig
+[includeIf "gitdir:/data/son/code-0x/"]
+  path = ~/code-0x/.gitconfig

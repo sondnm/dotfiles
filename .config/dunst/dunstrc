@@ -397,6 +397,10 @@
 #    summary = "foobar"
 #    history_ignore = yes
 
+[skip-display]
+    appname = "brave"
+    skip_display = yes
+
 #[skip-display]
 #    # This notification will not be displayed, but will be included in the history
 #    summary = "foobar"
